@@ -1,16 +1,20 @@
+# Бэкэнд RunPod
 runpod==1.7.6
-transformers==4.41.2
-accelerate==0.29.3
-safetensors==0.4.3
-huggingface_hub==0.23.5
-sentencepiece==0.2.0
+
+# Стек HF — пинним под torch==2.2.x
+transformers==4.39.3          # стабильна с tokenizers 0.15.x и accelerate 0.28.x
+accelerate==0.28.0
 tokenizers==0.15.2
+huggingface_hub==0.22.2
+safetensors==0.4.2
+sentencepiece==0.2.0
+einops==0.7.0
+peft==0.10.0
+
+# Утилиты
 numpy==1.26.4
 pillow==10.3.0
 requests==2.32.3
 
-# MoE-LLaVA (официальный репозиторий)
-git+https://github.com/PKU-YuanGroup/MoE-LLaVA.git
-
-# Опционально: квантовки
+# Квантовки (опционально; для 4/8-бит). Если wheel не найдётся — просто убери строку.
 bitsandbytes==0.43.1 ; platform_system == "Linux" and platform_machine == "x86_64"
